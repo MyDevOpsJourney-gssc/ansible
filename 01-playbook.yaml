@@ -2,7 +2,7 @@
   hosts: frontend
   tasks:
     -name: ping the server frontend
-    ping:
+     ping:
     
 
 
