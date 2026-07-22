@@ -2,7 +2,6 @@
   hosts: frontend
   tasks:
     - name: ping the server
-      ping:
       ansible.builtin.ping:
 
 
