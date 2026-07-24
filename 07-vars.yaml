@@ -1,0 +1,14 @@
+- name: demo on secret varibales
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: USERNAME
+      prompt: "Enter the Username: "
+      private: false
+    - name: PASSWORD
+      prompt: "Enter the Password: "
+      private: true
+  tasks:
+    - name: demo on secret varibales
+      debug:
+        msg: "The Username is {{ USERNAME }} and the Password is {{ PASSWORD }}"
