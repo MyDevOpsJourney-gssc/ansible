@@ -1,5 +1,6 @@
 - name: demo on loops for packahe installation
   hosts: frontend
+  become: yes
   tasks:
     - name: install packages
       package:
