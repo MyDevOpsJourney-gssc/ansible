@@ -1,0 +1,9 @@
+- name: demo on vars_files
+  hosts: local
+  connection: local
+  vars_files:
+    - course.yaml
+  tasks:
+    - name: demo on vars_files
+      debug:
+        msg: "The variable COURSE is coming form Vars_files - course.yaml file, The value is {{ COURSE }}"
