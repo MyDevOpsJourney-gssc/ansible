@@ -2,10 +2,10 @@
   hosts: local
   connection: local
   vars:
-      COURSE="ANSIBLE"
+      COURSE: "ANSIBLE"
   tasks:
     - name: demo on task varibles
       vars:
-          COURSE="ANSIBLE IN DEVSECOPS"
+          COURSE: "ANSIBLE IN DEVSECOPS"
       debug:
         msg: "Couse name is {{ COURSE }}"
