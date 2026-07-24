@@ -1,0 +1,7 @@
+- name: Demo on Cmd Line Args
+  hosts: local
+  connection: local
+  tasks:
+    - name: demo on CMD Line Args
+      debug:
+        msg: Name is {{ name }}
