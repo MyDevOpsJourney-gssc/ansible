@@ -1,10 +1,10 @@
 - name: demo on inventory variables
-  hosts: local
-  connection: local
+  hosts: frontend
+  # connection: local
   tasks: 
     - name: demo on inventory variables
       debug:
         msg: 
           -  "Course name is {{ Course }}, Trainer is {{ Trainer }} and the Duration is {{ Duration }},"
-          -  "These variable values are coming from the inventory file"
+          # -  "These variable values are coming from the inventory file"
         
