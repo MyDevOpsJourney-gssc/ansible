@@ -1,0 +1,10 @@
+- name: demo on conditions
+  hosts: local
+  connection: local
+  vars: 
+    SESSIONS: 5
+  tasks:
+    - name: demo on conditions
+      debug:
+        msg: "Yes ansible sessions are more than 2"
+      when: SESSIONS>2
