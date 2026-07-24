@@ -1,0 +1,26 @@
+- name: demo on datatypes
+  hosts: local
+  connection: local
+  vars:
+    Course: "DevSecops with AIPOS"
+    Duration: 150
+    is_live: true
+    topics:
+      - Ansible
+      - Shell
+      - Linux
+    more_details:
+      months: 5
+      trainer: "SivaKumar"
+  tasks:
+    - name: demo on datatypes
+      debug: 
+        msg: |
+          "Course :{{ Course }}"
+          "Duration: {{ Duration }}"
+          "Is_live: {{ is_live }}"
+          "Topics are: {{ topics  }}"
+          "more_details are: {{ more_details }}"
+
+
+       
