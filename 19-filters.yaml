@@ -1,0 +1,49 @@
+- name: demo on filters
+  hosts: local
+  connection: local
+  vars:
+    topics: linux, shell, Ansible, Terraform
+    tagMap:
+      name: Ansible
+      project: roboshop
+      env: Dev
+    full_name: Sri Swarna Srinivas
+    ip_address: 102.225.248.212
+    tagsList: [
+      {
+        "key": "name",
+        "value": "Ansible"
+      },
+      {
+        "key": "project",
+        "value": "roboshop"
+      },
+      {
+        "key": "env",
+        "value": "Dev"
+      }
+    ]
+  tasks:
+    - name: convert string to list
+      debug:
+        msg: "Converted Strings to list are- {{ topics | split(',') }}"
+    - name: set default value
+      debug:
+        msg: 
+          - "This is about default Filter"
+          - "{{ Greeting | default('Good Morning') }}"
+    - name: convert map to list
+      debug:
+        msg: "Converted Map to list is {{ tagMap | dict2items }}"
+    - name: convert list to Map
+      debug:
+        msg: "Converted List to Map is {{ tagsList | items2dict  }}"
+    - name: convert to upper
+      debug:
+        msg: "Upper case of Sri Swarna Srinivas is - {{ full_name | upper }}"
+    - name: convert to Lower
+      debug:
+        msg: "Lower case of Sri Swarna Srinivas is {{ full_name | lower }}"
+    - name: check valid IP
+      debug:
+         msg: " 102.225.248.212 - Valid Ip or not {{ ip_address | ansible.utils.ipv4 }}"
