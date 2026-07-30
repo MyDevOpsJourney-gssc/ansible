@@ -2,10 +2,11 @@
   hosts: local
   connection: local
   tasks:
-    -name: demo on cmd or shell
-     #command: cat /etc/passwd | grep root
+  - name: demo on cmd or shell
     shell: cat /etc/passwd | grep root
     register: root_output
+
+  - name: users result
     debug:
       msg: "Root User is avaialble or not {{ root_output }}"
        
