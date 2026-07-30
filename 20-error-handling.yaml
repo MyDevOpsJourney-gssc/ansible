@@ -3,7 +3,8 @@
   connection: local
   tasks:
     -name: demo on cmd or shell
-    command: cat etc/passwd | grep root
+     #command: cat /etc/passwd | grep root
+    shell: cat /etc/passwd | grep root
     register: root_output
     debug:
       msg: "Root User is avaialble or not {{ root_output }}"
