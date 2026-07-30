@@ -6,7 +6,21 @@
     - name: check user Exists or not
       command: id roboshop
       register: user_output
+      ignore_errors: true
 
     - name: print the output for roboshop user
       debug:
         msg: "{{ user_output }}"
+      
+    - name: create User roboshop
+      command: useradd roboshop
+      when: user_output.rc != 0
+
+    - name: checking User roboshop
+      shell: cat /etc/passwd | grep roboshop
+      register: roboshop_output
+
+    - name: printing output of roboshop user
+      debug:
+        msg: "roboshop User exists!!!"
+      when: roboshop_output.rc == 0
